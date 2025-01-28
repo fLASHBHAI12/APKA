@@ -1,0 +1,9 @@
+telebot
+logging
+asyncio
+pytz
+pyTelegramBotAPI
+pytz
+pyTelegramBotAPI==4.12.0
+pytz==2023.3
+
