@@ -7,14 +7,16 @@ from datetime import datetime, timedelta, timezone
 # Initialize logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-# Telegram bot token and channel ID
-TOKEN = '7822434388:AAGPqw2iAYsIGLGp8cj5thE6cm9w11Eh-tk'  # Replace with your actual bot token
-CHANNEL_ID = '-1002368955859'  # Replace with your specific channel or group ID
-# List of admin user IDs allowed to add groups
-ADMIN_IDS = [7479349647]  # Replace with actual admin Telegram user IDs
-
-# Initialize the bot
+CHANNEL_ID = '-1002368955859'
+ADMIN_ID = '7479349647'
+TOKEN = '7475040161:AAG_ojN4DOWHqNJvERwGH1H4Amox4TWsT3A'
 bot = telebot.TeleBot(TOKEN)
+
+try:
+    bot.get_me()
+    print("Bot token is valid!")
+except Exception as e:
+    print(f"Error: {e}")
 
 # Dictionary to track user attack counts, cooldowns, photo feedbacks, and bans
 user_attacks = {}
@@ -29,7 +31,7 @@ BAN_DURATION = timedelta(minutes=1)
 DAILY_ATTACK_LIMIT = 15  # Daily attack limit per user
 
 # List of user IDs exempted from cooldown, limits, and photo requirements
-EXEMPTED_USERS = [6768273586, 7479349647]
+EXEMPTED_USERS = [7479349647]
 
 def reset_daily_counts():
     """Reset the daily attack counts and other data at 12 AM IST."""
