@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 CHANNEL_ID = '-1002368955859'
-ADMIN_ID = '7479349647'
+ADMIN_IDS = '7479349647'
 TOKEN = '7475040161:AAG_ojN4DOWHqNJvERwGH1H4Amox4TWsT3A'
 bot = telebot.TeleBot(TOKEN)
 
@@ -78,7 +78,7 @@ def start_command(message):
         # Handle errors (e.g., bot isn't an admin in the channel)
         bot.send_message(
             chat_id,
-            "❌ Error checking your membership. Ensure the bot is an admin in the channel.",
+            "❌ Error checking your membership. Ensure the bot is an admin in the channel\n\nhttps://t.me/+t_GmBHP91YY0ZjVl.",
         )
         return
 
@@ -109,7 +109,7 @@ def FLASH_command(message):
 
     # Ensure the bot only works in the specified channel or group
     if str(message.chat.id) != CHANNEL_ID:
-        bot.send_message(message.chat.id, " ⚠️⚠️ 𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝗶𝘀 𝗻𝗼𝘁 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 𝘁𝗼 𝗯𝗲 𝘂𝘀𝗲𝗱 𝗵𝗲𝗿𝗲 ⚠️⚠️ \n\n[ 𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 : @TG_FLASH92 ( TUMHARE_PAPA ) | SCRIPT BY MRIN ]")
+        bot.send_message(message.chat.id, " ⚠️⚠️ 𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝗶𝘀 𝗻𝗼𝘁 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 𝘁𝗼 𝗯𝗲 𝘂𝘀𝗲𝗱 𝗵𝗲𝗿𝗲 ⚠️⚠️ \n\n[ 𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 : @TF_FLASH92 ( TUMHARE_PAPA ) | ]")
         return
 
     # Reset counts daily
@@ -197,7 +197,7 @@ def remove_group_command(message):
                 remaining_time = (cooldown_time - datetime.now()).seconds
                 bot.send_message(
                     message.chat.id,
-                    f"⚠️⚠️ 𝙃𝙞 {message.from_user.first_name}, 𝙮𝙤𝙪 𝙖𝙧𝙚 𝙘𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮 𝙤𝙣 𝙘𝙤𝙤𝙡𝙙𝙤𝙬𝙣. 𝙋𝙡𝙚𝙖𝙨𝙚 𝙬𝙖𝙞𝙩 {remaining_time // 10} 𝙢𝙞𝙣𝙪𝙩𝙚𝙨 𝙖𝙣𝙙 {remaining_time % 10} 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 𝙗𝙚𝙛𝙤𝙧𝙚 𝙩𝙧𝙮𝙞𝙣𝙜 𝙖𝙜𝙖𝙞𝙣 ⚠️⚠️ "
+                    f"⚠️⚠️ 𝙃𝙞 {message.from_user.first_name}, 𝙮𝙤𝙪 𝙖𝙧𝙚 𝙘𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮 𝙤𝙣 𝙘𝙤𝙤𝙡𝙙𝙤𝙬𝙣. 𝙋𝙡𝙚𝙖𝙨𝙚 𝙬𝙖𝙞𝙩 {remaining_time // 10} 𝙢𝙞𝙣𝙪𝙩𝙚𝙨 𝙖𝙣𝙙 {remaining_time % 10} 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 𝙗𝙚𝙛𝙤??𝙚 𝙩𝙧𝙮𝙞𝙣?? 𝙖𝙜𝙖𝙞𝙣 ⚠️⚠️ "
                 )
                 return
 
